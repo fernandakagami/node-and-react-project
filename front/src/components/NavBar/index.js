@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav style={{ backgroundColor: "#323351" }}>
       <div class="container mx-auto flex items-center justify-between flex-wrap p-6">
         <div class="flex items-center justify-between flex-wrap p-6">
-          <Image src={logo} width={160} height={35} alt="logo" className="mr-6" />
+          <Image src={logo} width={160} height={35} alt="Halogenn's logo" className="mr-6" />
           <ul className="flex">
             <li className="mr-6 text-sm" style={{ color: "#84C4EA" }}>
               <Link href="#">Início</Link>

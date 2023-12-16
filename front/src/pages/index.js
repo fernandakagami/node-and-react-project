@@ -1,25 +1,10 @@
-//import Image from 'next/image'
+import Banner from "../components/Banner";
 
 export default function Home() {
   return (
-    <div className="relative" style={{ backgroundColor: "#323351", height: "33vh" }}>
-      <div className="container mx-auto px-12">
-        <div className="grid grid-cols-3">
-          <div style={{ height: "509px", backgroundColor: "#F9F0EE", padding: "91px 71px 61px", color: "#323351" }}>
-            <h3 className="text-lg font-bold">PRODUTOS</h3>
-            <div></div>
-          </div>
-          <div style={{ height: "541px", backgroundColor: "#F5643D", padding: "91px 71px 93px" }}>
-            <h3 className="text-lg font-bold text-white">QUÍMICOS</h3>
-            <div></div>
-          </div>
-          <div style={{ height: "509px", backgroundColor: "#F9F0EE", padding: "91px 71px 61px", color: "#323351" }}>
-            <h3 className="text-lg font-bold">LABORATÓRIOS</h3>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Banner />
+    </>
     /*  <main
        className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
      >
