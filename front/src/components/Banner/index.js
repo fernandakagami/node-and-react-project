@@ -4,6 +4,8 @@ import bottle from '../../assets/images/bottle.svg';
 import tools from '../../assets/images/tools.svg';
 import starOne from '../../assets/images/star1.svg';
 import starTwo from '../../assets/images/star2.svg';
+import starThree from '../../assets/images/star3.svg';
+import science from '../../assets/images/made-with-science.svg';
 
 const Banner = () => {
   return (
@@ -46,7 +48,9 @@ const Banner = () => {
         height: "57vh",
         background: "linear-gradient(to top, white 0%, white 45%, #323351 45%, #323351 100%)"
       }}>
-        <div className="container mx-auto px-12">
+        <div className="container mx-auto px-12 relative">
+          <Image src={starThree} className="absolute" style={{ top: "-206px", right: "-265px" }} />
+          <Image src={science} className="absolute" style={{ top: "60px", left: "-194px" }} />
           <div className="grid grid-cols-3">
             <div className="flex flex-col justify-between" style={{ height: "509px", backgroundColor: "#F9F0EE", padding: "91px 71px 61px", color: "#323351" }}>
               <h3 className="text-lg font-bold">PRODUTOS</h3>
