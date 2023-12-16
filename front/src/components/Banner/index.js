@@ -4,7 +4,10 @@ import bottle from '../../assets/images/bottle.svg';
 
 const Banner = () => {
   return (
-    <div className="relative" style={{ backgroundColor: "#323351", height: "33vh" }}>
+    <div className="p-0 m-0 w-full" style={{
+      height: "57vh",
+      background: "linear-gradient(to top, white 0%, white 45%, #323351 45%, #323351 100%)"
+    }}>
       <div className="container mx-auto px-12">
         <div className="grid grid-cols-3">
           <div className="flex flex-col justify-between" style={{ height: "509px", backgroundColor: "#F9F0EE", padding: "91px 71px 61px", color: "#323351" }}>
