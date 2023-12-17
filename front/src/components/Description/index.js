@@ -8,7 +8,7 @@ const Description = () => {
         <h2 className="text-3xl text-white pb-2.5 font-normal">Qualidade e expertise em produtos <span style={{ color: "#48C7F3" }}>químicos e acessórios</span></h2>
         <p className="text-base text-white font-normal">Estamos preparados para te entender e atender da melhor forma para suprir todas as suas demandas em químicos e similares.</p>
       </div>
-      <div className='absolute mx-auto w-full' style={{ left: "60%", top: "80%", transform: "translate(-50%, -50%)", overflow: "hidden" }}>
+      <div className='absolute mx-auto w-full overflow-x-hidden' style={{ left: "50%", top: "104%", transform: "translate(-50%, -50%)" }}>
         <Image src={star} width={400} height={350} alt="estrelas" />
       </div >
     </>

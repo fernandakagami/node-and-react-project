@@ -48,7 +48,7 @@ const Banner = () => {
         height: "57vh",
         background: "linear-gradient(to top, white 0%, white 45%, #323351 45%, #323351 100%)"
       }}>
-        <div className="container mx-auto px-12 relative">
+        <div className="container mx-auto px-12 relative overflow-x-hidden">
           <Image src={starThree} className="absolute" style={{ top: "-206px", right: "-265px" }} />
           <Image src={science} className="absolute" style={{ top: "60px", left: "-194px" }} />
           <div className="grid grid-cols-3">
