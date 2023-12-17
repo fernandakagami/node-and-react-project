@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -30,29 +30,99 @@ const Navbar = () => {
     showNavbar == false ? setShowNavbar(true) : setShowNavbar(false)
   }
 
-  useEffect(() => {
-    console.log(showNavbar);
-  }, [showNavbar]);
-
   return (
     <>
       <nav className="md:hidden" style={{ backgroundColor: "#323351", paddingBottom: "333px" }}>
-        <div>
-          <div className="container mx-auto flex items-center justify-between flex-wrap px-6 pt-6" style={{ marginBottom: "119px" }}>
-            <div className="flex items-center justify-between flex-wrap p-6">
-              <Image src={logo} width={160} height={35} alt="Halogenn's logo" />
+        {!showNavbar &&
+          <div>
+            <div className="container mx-auto flex items-center justify-between flex-wrap px-6 pt-6" style={{ marginBottom: "119px" }}>
+              <div className="flex items-center justify-between flex-wrap p-6">
+                <Image src={logo} width={160} height={35} alt="Halogenn's logo" />
+              </div>
+              <div className="flex">
+                <button className={`flex items-center justify-between p-2 rounded-lg m-6 ${styles.budget}`} style={{ backgroundColor: "#F5643D" }}>
+                  <Image src={budget} width={22} height={22} alt="budget button" />
+                </button>
+                <button>
+                  <Image src={menu} width={29} height={29} alt="menu button" onClick={handleDropdown} />
+                </button>
+              </div>
             </div>
-            <div className="flex">
-              <button className={`flex items-center justify-between p-2 rounded-lg m-6 ${styles.budget}`} style={{ backgroundColor: "#F5643D" }}>
-                <Image src={budget} width={22} height={22} alt="budget button" />
-              </button>
-              <button>
-                <Image src={menu} width={29} height={29} alt="menu button" />
-              </button>
+            <Description />
+          </div>
+        }
+        {showNavbar &&
+          <div>
+            <div className="container mx-auto flex items-center justify-between flex-wrap px-6 pt-6" style={{ marginBottom: "29px" }}>
+              <div className="flex items-center justify-between flex-wrap p-6">
+                <Image src={logo} width={160} height={35} alt="Halogenn's logo" />
+              </div>
+              <div className="flex">
+                <button className={`flex items-center justify-between p-2 rounded-lg m-6 ${styles.budget}`} style={{ backgroundColor: "#F5643D" }}>
+                  <Image src={budget} width={22} height={22} alt="budget button" />
+                </button>
+                <button>
+                  <Image src={menu} width={29} height={29} alt="menu button" onClick={handleDropdown} />
+                </button>
+              </div>
+            </div>
+            <div className="container mx-auto px-6 text-white mb-7">
+              <div className='mb-9' >
+                <h3 className='text-xl mb-9'>Navegue por <br />nosso site</h3>
+                <ul>
+                  <li className='mb-5 cursor-pointer'>Início</li>
+                  <li className='mb-5 cursor-pointer'>Laudos</li>
+                  <li className='mb-5 cursor-pointer'>Sobre nós</li>
+                  <li className='mb-5 cursor-pointer'>Certificações</li>
+                  <li className='mb-5 cursor-pointer'>Contato</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className='text-xl mb-11'>Catálogo completo<br /> de itens para você</h3>
+                <div className='mb-11'>
+                  <h4 className='text-base mb-5'>Laboratório</h4>
+                  <div className='grid grid-cols-2 gap-3'>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon1} width={18} height={18} alt="equipamento" className='me-2'></Image>
+                      Equipamentos
+                    </p>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon2} width={20} height={20} alt="termômetro" className='me-2'></Image>
+                      Termômetros
+                    </p>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon3} width={20} height={20} alt="acessório" className='me-2'></Image>
+                      Acessórios
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className='text-base mb-5'>Utensílios</h4>
+                  <div className='grid grid-cols-2 gap-3'>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon4} width={18} height={18} alt="inox" className='me-2'></Image>
+                      Inox e Ferragens
+                    </p>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon5} width={18} height={18} alt="vidraria" className='me-2'></Image>
+                      Vidrarias
+                    </p>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon6} width={18} height={18} alt="plástico" className='me-2'></Image>
+                      Plásticos
+                    </p>
+                    <p className='text-sm flex justify-start items-center cursor-pointer'>
+                      <Image src={icon7} width={18} height={18} alt="porcelana" className='me-2'></Image>
+                      Porcelanas
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <Description />
-        </div>
+        }
+
+
       </nav>
       <nav className="hidden md:block" style={{ backgroundColor: "#323351" }}>
         {!showNavbar &&
@@ -130,15 +200,15 @@ const Navbar = () => {
                 <h4 className='text-base pb-5'>Laboratório</h4>
                 <div className='grid grid-cols-2 gap-3'>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon1} width={18} height={18} className='me-2'></Image>
+                    <Image src={icon1} width={18} height={18} alt="equipamento" className='me-2'></Image>
                     Equipamentos
                   </p>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon2} width={20} height={20} className='me-2'></Image>
+                    <Image src={icon2} width={20} height={20} alt="termômetro" className='me-2'></Image>
                     Termômetros
                   </p>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon3} width={20} height={20} className='me-2'></Image>
+                    <Image src={icon3} width={20} height={20} alt="acessório" className='me-2'></Image>
                     Acessórios
                   </p>
                 </div>
@@ -147,19 +217,19 @@ const Navbar = () => {
                 <h4 className='text-base pb-5'>Utensílios</h4>
                 <div className='grid grid-cols-2 gap-3'>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon4} width={18} height={18} className='me-2'></Image>
+                    <Image src={icon4} width={18} height={18} alt="inox" className='me-2'></Image>
                     Inox e Ferragens
                   </p>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon5} width={18} height={18} className='me-2'></Image>
+                    <Image src={icon5} width={18} height={18} alt="vidraria" className='me-2'></Image>
                     Vidrarias
                   </p>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon6} width={18} height={18} className='me-2'></Image>
+                    <Image src={icon6} width={18} height={18} alt="plástico" className='me-2'></Image>
                     Plásticos
                   </p>
                   <p className='text-sm flex justify-start items-center'>
-                    <Image src={icon7} width={18} height={18} className='me-2'></Image>
+                    <Image src={icon7} width={18} height={18} alt="porcelana" className='me-2'></Image>
                     Porcelanas
                   </p>
                 </div>

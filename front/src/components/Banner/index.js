@@ -10,14 +10,14 @@ import science from '../../assets/images/made-with-science.svg';
 const Banner = () => {
   return (
     <>
-      <div className="py-0 px-6 mt-9 w-full md:hidden">
+      <div className="py-0 px-6 mt-9 w-full md:hidden z-10 relative">
         <div className="container mx-auto px-3.5">
           <div className="ps-9 py-6 pe-7 flex justify-between items-center" style={{ backgroundColor: "#F9F0EE" }}>
             <div className="flex justify-between items-center" style={{ color: "#323351" }}>
               <Image src={erlenmeyer} width={23} height={23} alt="erlenmeyer" />
               <h2 className="px-3 text-lg leading-4">Vidrarias e Equipamentos</h2>
             </div>
-            <Image src={starOne} />
+            <Image src={starOne} alt="star" />
           </div>
         </div>
         <div className="container mx-auto px-3.5">
